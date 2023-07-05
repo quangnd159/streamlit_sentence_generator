@@ -72,7 +72,7 @@ def app():
                     "example": example
                 })
                 # Chain 2: Extract collocations from answer
-                template = """Suggest two other vocabulary items that can serve the same purpose as the provided item. An example is provided to give you the meaning of the given item. Make sure to give suggestions appropriate for academic essays. The examples given for your suggestions must use different topics other than the one in the given example.
+                template = """Suggest two other vocabulary items that can serve the same purpose as the provided item. An example is provided to give you the meaning of the given item. Make sure to give suggestions appropriate for academic essays. The examples given for your suggestions must use different topics other than the one in the given example. Use nice markdown format with the output.
                 Here is the vocabulary item: {item}. And here's the example using the item: {example}"""
                 prompt_template = PromptTemplate(input_variables=["item", "example"], template=template)
                 more_items_chain = LLMChain(llm=llm, prompt=prompt_template)
