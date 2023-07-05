@@ -12,7 +12,7 @@ load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 # eleven_api_key = os.getenv("ELEVEN_API_KEY")
 
-llm = ChatOpenAI(temperature=1.3, model="gpt-3.5-turbo")
+llm = ChatOpenAI(temperature=1, model="gpt-3.5-turbo")
 
 def app():
     st.title("Sentence Generator")
