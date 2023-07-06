@@ -53,7 +53,7 @@ def app():
             st.markdown(more_items)
             # st.audio(audio_data, format='audio/wav')
             # st.markdown(collocations)
-
+    st.write("By [Quang](https://dqnotes.com)")
 
 if __name__ == '__main__':
     app()
