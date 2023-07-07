@@ -1,4 +1,3 @@
-
 import os
 
 import streamlit as st
@@ -15,7 +14,19 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(temperature=1, model="gpt-3.5-turbo")
 
 def app():
-    st.title("Sentence Generator")
+    st.set_page_config(page_title="SenGenAI", page_icon="⚡")
+    st.title("SenGenAI ⚡")
+    st.markdown("## A sentence generator powered by AI")
+    st.sidebar.markdown(
+        """
+        ### 💡 Instructions 
+        1. Enter a vocabulary item
+        2. Enter an example that uses the item, with a clear context
+        3. Hit **Submit**
+        """
+    )
+    st.sidebar.info("You will get more examples using the given vocabulary item in different contexts, along with two more words or phrases that help you achieve the same (or similar) purpose.")
+    st.sidebar.success("🌱 This app aims to help you expand writing vocabulary by providing you with good examples and similar expressions, which you can put in an intelligent flashcard system like Anki.")
 
     with st.form(key='my_form'):
         item = st.text_input("Enter a vocabulary item")
