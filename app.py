@@ -9,7 +9,6 @@ from langchain.chat_models import ChatOpenAI
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
-# eleven_api_key = os.getenv("ELEVEN_API_KEY")
 
 llm = ChatOpenAI(temperature=1, model="gpt-3.5-turbo")
 
@@ -57,13 +56,9 @@ def app():
                     "item": item,
                     "example": example
                 })
-                # audio = text_to_speech(answer_text)
-                # audio_data = audio.audio_data
             st.markdown(sentence_text)
             st.header('Similar vocabulary items')
             st.markdown(more_items)
-            # st.audio(audio_data, format='audio/wav')
-            # st.markdown(collocations)
     st.write("By [Quang](https://dqnotes.com)")
 
 if __name__ == '__main__':
